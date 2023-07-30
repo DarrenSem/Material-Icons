@@ -1,0 +1,3772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Material Icons (3010 of them!) ?r=off/false/0 to disable spinning</title>
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" /> <!-- solidly filled in; LAST TO LOAD determines top precedence vs. "Symbols+Outlined" -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<lXYZink rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+
+</head>
+<style>	<!-- tbh this seems to be ignored, so XYZ has been added for now... -->
+.mXYZaterial-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+</style>
+
+<style>
+
+:root {
+  --duration: 2.34;
+  --rot-dir: 1; /* 1 = clockwise, -1 = counter-clockwise */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    /* transform: rotate(360deg); */
+    transform: rotate( calc( var(--rot-dir) * 360deg ) );
+  }
+}
+
+@keyframes rotate-cXYZc {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.rotating {
+  display: inline-block;
+  /* animation: rotate 20s linear infinite; */
+  animation: rotate calc( var(--duration) * 1s ) linear infinite;
+}
+
+.rotating-cXYZc {
+  display: inline-block;
+  animation: rotate-cc 20s linear infinite;
+}
+
+.rotating:hover {
+  /*animation-play-state: paused;*/
+  animation: none;
+}
+
+
+</style>
+
+<body>
+
+<h2>Material Icons (3010 of them!)</h2>
+<p id="rotate_toggle"></p>
+
+<span
+id="container"
+
+class="material-symbols-outlined material-icons"
+cXYZlass="icon-asset material-symbols-outlined mateXYZrial-icons no_need_for_icon-asset_part"
+
+style="font-size: 48px; font-variation-settings: &quot;FILL&quot; 0, &quot;wght&quot; 400, &quot;GRAD&quot; 0, &quot;opsz&quot; 48;"
+but_THIS_makes_a_huge_difference=" ^ ^ ^ "
+>
+<!-- <span style>settings</span> no need for "style" either. -->
+<span class="rotating">settings</span>
+</span>
+
+<script>
+
+
+
+// FORGET THIS; there are JUST TOO MANY!
+// I guess as a RULE I should always use this:
+// <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+var MISSING_FROM_ICONS = `
+
+
+Select Check Box
+Heart Plus
+Place Item
+Check Small
+Enable
+Browse Activity
+More Up
+Heart Minus
+Share Reviews
+
+
+`.split("\n").filter(Boolean);
+
+
+
+var ROTATE_DISABLED = /\br(ot(|ate|)|)=(off|false|0)\b/i.test(location.search);
+
+document.getElementById("rotate_toggle").innerHTML = `<small>( to ${
+	ROTATE_DISABLED ? "enable" : "disable"
+} spinning: <a href="${
+	ROTATE_DISABLED ? location.pathname : "?r=false"
+}"><code>?rotate=${
+	ROTATE_DISABLED
+	? "on/true/1"
+	: "off/false/0"
+}</code></a></small> )</p>`;
+
+var manually_created_ICONS_for_posterity_comparison_idk = `
+
+Search
+Home
+Menu
+Close
+Settings
+Done
+
+Expand More
+Check Circle
+Favorite
+Add
+Delete
+Arrow Back
+
+Star
+Chevron Right
+Logout
+Arrow Forward Ios
+Add Circle
+Cancel
+
+Arrow Back Ios
+Arrow Forward
+Arrow Drop Down
+More Vert
+Check
+Check Box
+
+Toggle On
+Grade
+Open In New
+Check Box Outline Blank
+Refresh
+Login
+
+Chevron Left
+Expand Less
+Radio Button Unchecked
+More Horiz
+Apps
+Arrow Right Alt
+
+Radio Button Checked
+Download
+Remove
+Bolt
+Toggle Off
+Arrow Upward
+
+Filter List
+Delete
+Autorenew
+Key
+Arrow Downward
+Sync
+
+Sort
+Block
+Add Box
+Arrow Back Ios New
+Restart Alt
+Menu Open
+
+Shopping Cart Checkout
+Expand Circle Down
+Backspace
+Undo
+Arrow Circle Right
+Done All
+
+`;
+
+
+
+
+
+
+var ICONS = `
+
+Search
+Home
+Menu
+Close
+Settings
+Done
+
+Expand More
+Check Circle
+Favorite
+Add
+Delete
+Arrow Back
+
+Star
+Chevron Right
+Logout
+Arrow Forward Ios
+Add Circle
+Cancel
+
+Arrow Back Ios
+Arrow Forward
+Arrow Drop Down
+More Vert
+Check
+Check Box
+
+Toggle On
+Grade
+Open In New
+Check Box Outline Blank
+Refresh
+Login
+
+Chevron Left
+Expand Less
+Radio Button Unchecked
+More Horiz
+Apps
+Arrow Right Alt
+
+Radio Button Checked
+Download
+Remove
+Bolt
+Toggle Off
+Arrow Upward
+
+Filter List
+Delete Forever
+Autorenew
+Key
+Arrow Downward
+Sync
+
+Sort
+Block
+Add Box
+Arrow Back Ios New
+Restart Alt
+Menu Open
+
+Shopping Cart Checkout
+Expand Circle Down
+Backspace
+Undo
+Arrow Circle Right
+Done All
+
+Arrow Right
+Do Not Disturb On
+Open In Full
+Manage Search
+Double Arrow
+Sync Alt
+
+Zoom In
+Done Outline
+Drag Indicator
+Fullscreen
+Keyboard Double Arrow Right
+Star Half
+
+Settings Accessibility
+Ios Share
+Arrow Drop Up
+Reply
+Exit To App
+Unfold More
+
+Library Add
+Cached
+Select Check Box
+Terminal
+Change Circle
+Disabled By Default
+
+Swap Horiz
+Swap Vert
+Close Fullscreen
+App Registration
+Download For Offline
+Arrow Circle Left
+
+Arrow Circle Up
+File Open
+Minimize
+Open With
+Keyboard Double Arrow Left
+Dataset
+
+Add Task
+Start
+Keyboard Double Arrow Down
+Keyboard Voice
+Create New Folder
+Forward
+
+Downloading
+Settings Applications
+Compare Arrows
+Redo
+Publish
+Arrow Left
+
+Zoom Out
+Html
+Token
+Switch Access Shortcut
+Arrow Circle Down
+Fullscreen Exit
+
+Delete Sweep
+Sort By Alpha
+Indeterminate Check Box
+First Page
+Keyboard Double Arrow Up
+View Timeline
+
+Arrow Drop Down Circle
+Assistant Navigation
+Settings Backup Restore
+Sync Problem
+Clear All
+Density Medium
+
+Heart Plus
+Filter Alt Off
+Expand
+Last Page
+Subdirectory Arrow Right
+Unfold Less
+
+Arrow Outward
+Download Done
+123
+Swipe Left
+Saved Search
+System Update Alt
+
+Place Item
+Maximize
+Javascript
+Output
+Search Off
+Swipe Up
+
+Fit Screen
+Select All
+Dynamic Form
+Hide Source
+Swipe Right
+Switch Access Shortcut Add
+
+Browse Gallery
+Check Small
+Css
+Density Small
+Assistant Direction
+Move Up
+
+Youtube Searched For
+File Download Done
+Swap Horizontal Circle
+Data Thresholding
+Install Mobile
+Abc
+
+Dataset Linked
+Move Down
+Restore From Trash
+Enable
+Install Desktop
+Keyboard Command Key
+
+View Kanban
+Browse Activity
+Reply All
+Switch Left
+Compress
+Swipe Down
+
+Swap Vertical Circle
+Remove Done
+Apps Outage
+Filter List Off
+Star Rate
+Hide
+
+Switch Right
+Swipe Vertical
+More Up
+Sync Disabled
+Pinch
+Keyboard Control Key
+
+Eject
+Key Off
+Php
+Subdirectory Arrow Left
+View Cozy
+Transcribe
+
+Do Not Disturb Off
+Send Time Extension
+Width Normal
+Heart Minus
+View Comfy Alt
+Share Reviews
+
+Width Full
+Unfold More Double
+View Compact Alt
+File Download Off
+Extension Off
+Open In New Off
+
+Check Indeterminate Small
+More Down
+Width Wide
+Repartition
+Density Large
+Swipe Left Alt
+
+Swipe Down Alt
+Swipe Right Alt
+Swipe Up Alt
+Unfold Less Double
+Keyboard Option Key
+Cycle
+
+Hls
+Hls Off
+Progress Activity
+File Upload Off
+Rebase
+Expand Content
+
+Expand All
+Rebase Edit
+Collapse All
+Empty Dashboard
+Arrow Split
+Quick Reference All
+
+Arrow Upward Alt
+Switches
+Arrow Downward Alt
+Deployed Code
+Directory Sync
+Cards
+
+Data Check
+Quick Reference
+Side Navigation
+Acute
+Bubble
+Left Click
+
+Sync Saved Locally
+Stack
+Move Item
+Steppers
+Data Alert
+Arrow Left Alt
+
+Stat 3
+Clock Loader 60
+Page Info
+Search Check
+Data Info Alert
+Point Scan
+
+Question Exchange
+Preliminary
+Toolbar
+Captive Portal
+Clock Loader 10
+New Window
+
+Sweep
+Right Panel Close
+Star Rate Half
+Page Control
+Patient List
+Unknown Med
+
+Right Panel Open
+Stat 2
+Stat Minus 1
+Dialogs
+Stat Minus 2
+Clock Loader 40
+
+Stack Star
+Arrow Insert
+Capture
+Heart Check
+Step Into
+Drag Pan
+
+Magnification Large
+Partner Reports
+Step
+Magnification Small
+Stat 1
+Clock Loader 90
+
+Dropdown
+Left Panel Close
+Left Panel Open
+Sliders
+Bottom Panel Open
+Clock Loader 80
+
+Move Group
+Bottom Navigation
+Rule Settings
+Stack Off
+All Match
+Clock Loader 20
+
+Stat Minus 3
+Bottom Drawer
+Buttons Alt
+Chip Extraction
+Pip
+Resize
+
+Bottom Sheets
+Chronic
+Tabs
+Chips
+Iframe
+Input Circle
+
+Reopen Window
+Ripples
+Shelf Position
+Toast
+Unknown 5
+Right Click
+
+Share Windows
+Arrow Range
+Go To Line
+Subheader
+Bottom Right Click
+Drag Click
+
+Step Out
+Arrow And Edge
+Expand Circle Up
+Step Over
+Switch Access
+Error Med
+
+Output Circle
+Amend
+App Badging
+Deployed Code Alert
+Event List
+Move Selection Left
+
+Move Selection Right
+Pip Exit
+Arrow Or Edge
+Arrow Top Right
+Bottom App Bar
+Deployed Code Update
+
+Iframe Off
+Shelf Auto Hide
+Arrow Top Left
+Bottom Panel Close
+Bubbles
+Position Bottom Right
+
+Arrows Outward
+Back To Tab
+Deployed Code History
+Jump To Element
+Move Selection Down
+Move Selection Up
+
+Open In New Down
+Position Bottom Left
+Position Top Right
+Expand Circle Right
+
+Person
+Group
+Share
+Thumb Up
+Groups
+Person Add
+
+Public
+Handshake
+Support Agent
+Face
+Sentiment Satisfied
+Rocket Launch
+
+Group Add
+Workspace Premium
+Psychology
+Diversity 3
+Emoji Objects
+Water Drop
+
+Eco
+Pets
+Travel Explore
+Mood
+Sunny
+Quiz
+
+Health And Safety
+Sentiment Dissatisfied
+Sentiment Very Satisfied
+Military Tech
+Thumb Down
+Gavel
+
+Recycling
+Diamond
+Monitor Heart
+Emoji People
+Diversity 1
+Workspaces
+
+Vaccines
+Compost
+Forest
+Recommend
+Waving Hand
+Person Remove
+
+Wc
+Medication
+Sentiment Neutral
+Group Work
+Sentiment Very Dissatisfied
+Diversity 2
+
+Front Hand
+Psychology Alt
+Cruelty Free
+Man
+Medical Information
+Coronavirus
+
+Add Reaction
+Rocket
+Female
+Potted Plant
+Emoji Nature
+Rainy
+
+Person Off
+Cookie
+Woman
+Connect Without Contact
+Mood Bad
+Male
+
+Bedtime
+Solar Power
+Communication
+Thunderstorm
+Groups 2
+Partly Cloudy Day
+
+Thumbs Up Down
+Emoji Flags
+Masks
+Hive
+Heart Broken
+Sentiment Extremely Dissatisfied
+
+Clear Day
+Boy
+Whatshot
+Cloudy Snowing
+Emoji Food Beverage
+Wind Power
+
+Emoji Transportation
+Elderly
+Face 6
+Reduce Capacity
+Sick
+Pregnant Woman
+
+Face 3
+Bloodtype
+Group Remove
+Egg
+Medication Liquid
+Groups 3
+
+Co2
+Clear Night
+Skull
+Weight
+Follow The Signs
+Face 4
+
+Emoji Events
+Oil Barrel
+Elderly Woman
+Transgender
+Clean Hands
+Sanitizer
+
+Person 2
+Bring Your Own Ip
+Public Off
+Face 2
+Social Distance
+Routine
+
+Sign Language
+South America
+Sunny Snowing
+Emoji Symbols
+Garden Cart
+Flood
+
+Face 5
+Egg Alt
+Cyclone
+Girl
+Person 4
+Dentistry
+
+Tsunami
+Group Off
+Outdoor Garden
+Partly Cloudy Night
+Severe Cold
+Snowing
+
+Person 3
+Tornado
+Landslide
+Vaping Rooms
+Safety Divider
+Foggy
+
+Woman 2
+No Adult Content
+Volcano
+Man 2
+Blind
+18 Up Rating
+
+6 Ft Apart
+Vape Free
+Not Accessible
+Man 4
+Radiology
+Rib Cage
+
+Hand Bones
+Bedtime Off
+Rheumatology
+Man 3
+Orthopedics
+Tibia
+
+Partner Exchange
+Skeleton
+Humerus
+Agender
+Femur
+Foot Bones
+
+Tibia Alt
+Femur Alt
+Humerus Alt
+Communities
+Diversity 4
+Ulna Radius
+
+Ulna Radius Alt
+Specific Gravity
+Cognition
+Eyeglasses
+Psychiatry
+Breastfeeding
+
+Labs
+Crowdsource
+Footprint
+Vital Signs
+Nutrition
+Social Leaderboard
+
+Neurology
+Demography
+Globe Asia
+Stethoscope
+Conditions
+Clinical Notes
+
+Lab Research
+Sentiment Excited
+Sentiment Stressed
+Taunt
+Pill
+Strategy
+
+Altitude
+Glucose
+Globe Uk
+Sentiment Calm
+Home Health
+Mystery
+
+Falling
+Sentiment Sad
+Crossword
+Prayer Times
+Recent Patient
+Sentiment Content
+
+Chess
+Person Raised Hand
+Prescriptions
+Share Off
+Weather Hail
+Cardiology
+
+Genetics
+Helicopter
+Mist
+Sentiment Frustrated
+Weather Mix
+Wrist
+
+Deceased
+Dew Point
+Microbiology
+Cheer
+Earthquake
+Folded Hands
+
+Metabolism
+Body System
+Ent
+Explosion
+Pulmonology
+Dermatology
+
+Oxygen Saturation
+Playing Cards
+Stethoscope Check
+Domino Mask
+Emoticon
+Humidity Percentage
+
+Infrared
+Mountain Flag
+Sentiment Worried
+Sword Rose
+Barefoot
+Comic Bubble
+
+Cookie Off
+Stethoscope Arrow
+Water Lux
+Allergies
+Lab Panel
+Ophthalmology
+
+Water Bottle
+Water Do
+Water Voc
+Allergy
+Blood Pressure
+Gynecology
+
+Immunology
+Manga
+Oncology
+Oral Disease
+Person Apron
+Short Stay
+
+Symptoms
+Water Orp
+Water Ph
+Body Fat
+Endocrinology
+Hematology
+
+Inpatient
+Mixture Med
+Moving Beds
+Nephrology
+Respiratory Rate
+Salinity
+
+Ward
+Congenital
+Fluid
+Fluid Balance
+Fluid Med
+Gastroenterology
+
+Medical Mask
+Outpatient
+Outpatient Med
+Pediatrics
+Procedure
+Rainy Snow
+
+Surgical
+Syringe
+Urology
+Wounds Injuries
+Admin Meds
+Pill Off
+
+Pregnancy
+Total Dissolved Solids
+Candle
+Destruction
+Rainy Heavy
+Rainy Light
+
+Snowing Heavy
+Water Bottle Large
+Water Ec
+
+Account Circle
+Info
+Visibility
+Calendar Month
+Schedule
+Help
+
+Language
+Warning
+Lock
+Error
+Visibility Off
+Verified
+
+Manage Accounts
+History
+Task Alt
+Event
+Bookmark
+Calendar Today
+
+Question Mark
+Lightbulb
+Fingerprint
+Category
+Update
+Lock Open
+
+Priority High
+Code
+Build
+Date Range
+Upload File
+Supervisor Account
+
+Event Available
+Ads Click
+Today
+Touch App
+Pending
+Preview
+
+Stars
+New Releases
+Account Box
+Celebration
+How To Reg
+Translate
+
+Bug Report
+Push Pin
+Alarm
+Edit Calendar
+Edit Square
+Label
+
+Extension
+Event Note
+Record Voice Over
+Rate Review
+Web
+Hourglass Empty
+
+Published With Changes
+Support
+Notification Important
+Upload
+Help Center
+Accessibility New
+
+Bookmarks
+Pan Tool Alt
+Supervised User Circle
+Dangerous
+Collections Bookmark
+Interests
+
+All Inclusive
+Rule
+Change History
+Priority
+Event Upcoming
+Build Circle
+
+Wysiwyg
+Api
+Pan Tool
+Circle Notifications
+Hotel Class
+Manage History
+
+Web Asset
+Accessible
+Upgrade
+Bookmark Add
+Lock Reset
+Input
+
+Event Busy
+More Time
+Flutter Dash
+Model Training
+Save As
+Backup
+
+Alarm On
+Accessibility
+Dynamic Feed
+Pageview
+Home App Logo
+Label Important
+
+Perm Contact Calendar
+History Toggle Off
+Approval
+Square Foot
+More
+Swipe
+
+Component Exchange
+Event Repeat
+Bookmark Added
+App Shortcut
+Unpublished
+Open In Browser
+
+Notification Add
+Offline Bolt
+No Accounts
+Free Cancellation
+Running With Errors
+Background Replace
+
+Webhook
+Anchor
+3d Rotation
+Lock Person
+New Label
+Lock Clock
+
+Accessible Forward
+Auto Delete
+Add Alert
+Domain Verification
+Outbound
+Hand Gesture
+
+Tab
+Settings Power
+Chrome Reader Mode
+Online Prediction
+Gesture
+Edit Notifications
+
+Lightbulb Circle
+Find Replace
+Backup Table
+Offline Pin
+Wifi Protected Setup
+Ad Units
+
+Http
+Bookmark Remove
+Alarm Add
+Pinch Zoom Out
+On Device Training
+Snooze
+
+Batch Prediction
+Code Off
+Pinch Zoom In
+Commit
+Hourglass Disabled
+Settings Overscan
+
+Polymer
+Target
+Logo Dev
+Youtube Activity
+Time Auto
+Voice Over Off
+
+Person Add Disabled
+Alarm Off
+Update Disabled
+Timer 10 Alt 1
+Rounded Corner
+Label Off
+
+All Out
+Timer 3 Alt 1
+Tab Unselected
+Rsvp
+Web Asset Off
+Pin Invoke
+
+Pin End
+Code Blocks
+Approval Delegation
+Arrow Selector Tool
+Developer Guide
+Feature Search
+
+Reminder
+Lists
+Problem
+Browse
+Visibility Lock
+Award Star
+
+Data Loss Prevention
+Ad Group
+Select Window
+Release Alert
+Ad
+Pan Zoom
+
+Settings Account Box
+Shadow
+Draft Orders
+Add Ad
+Circles Ext
+Ad Group Off
+
+Lock Open Right
+Gesture Select
+Account Circle Off
+Circles
+Watch Screentime
+Select Window Off
+
+Alarm Smart Wake
+Bookmark Manager
+Shift
+Help Clinic
+Scrollable Header
+Warning Off
+
+Ad Off
+Water Lock
+Preview Off
+Supervised User Circle Off
+Domain Verification Off
+Measuring Tape
+
+Info I
+Shift Lock
+Shadow Add
+Shadow Minus
+
+Mail
+Call
+Notifications
+Send
+Chat
+Link
+
+Forum
+Inventory 2
+Phone In Talk
+Contact Support
+Chat Bubble
+Notifications Active
+
+Alternate Email
+Sms
+Comment
+Power Settings New
+Hub
+Person Search
+
+Import Contacts
+Contact Mail
+Contacts
+Live Help
+Forward To Inbox
+Mark Email Unread
+
+Reviews
+Lan
+Contact Phone
+Mode Comment
+Hourglass Top
+Inbox
+
+Drafts
+Outgoing Mail
+Hourglass Bottom
+Mark Email Read
+Link Off
+Calendar Add On
+
+Add Comment
+Phone Enabled
+Speaker Notes
+G Translate
+Perm Phone Msg
+Co Present
+
+Notifications Off
+Topic
+Call End
+Cell Tower
+Mark Chat Unread
+Schedule Send
+
+Dialpad
+Call Made
+Satellite Alt
+Mark Unread Chat Alt
+Unarchive
+3p
+
+Cancel Presentation
+Mark As Unread
+Move To Inbox
+Attach Email
+Next Plan
+Phonelink Ring
+
+Unsubscribe
+Phone Callback
+Call Received
+Settings Phone
+Call Split
+Present To All
+
+Add Call
+Markunread Mailbox
+All Inbox
+Phone Forwarded
+Voice Chat
+Mail Lock
+
+Attribution
+Voicemail
+Duo
+Contact Emergency
+Mark Chat Read
+Upcoming
+
+Phone Disabled
+Swap Calls
+Outbox
+Phonelink Lock
+Spoke
+Cancel Schedule Send
+
+Ring Volume
+Notifications Paused
+Picture In Picture Alt
+Quickreply
+Phone Missed
+Comment Bank
+
+Send And Archive
+Chat Add On
+Settings Bluetooth
+Phonelink Erase
+Picture In Picture
+Comments Disabled
+
+Video Chat
+Score
+Pause Presentation
+Cell Wifi
+Speaker Phone
+Speaker Notes Off
+
+Auto Read Play
+Mms
+Call Merge
+Play For Work
+Call Missed Outgoing
+Call Missed
+
+Wifi Channel
+Calendar Apps Script
+Phone Paused
+Rtt
+Auto Read Pause
+Phone Locked
+
+Chat Apps Script
+Wifi Calling
+Dialer Sip
+Nat
+Sip
+Phone Bluetooth Speaker
+
+E911 Avatar
+Inbox Customize
+Stacked Email
+Tooltip
+Business Messages
+Notification Multiple
+
+Chat Error
+Ods
+Chat Paste Go
+Signal Cellular Add
+Call Log
+Outbox Alt
+
+Call Quality
+Odt
+Stacked Inbox
+Network Intelligence Update
+Phonelink Ring Off
+Network Manage
+
+Wifi Proxy
+Network Intelligence History
+Wifi Add
+
+Edit
+Photo Camera
+Filter Alt
+Image
+Navigate Next
+Tune
+
+Timer
+Picture As Pdf
+Circle
+Palette
+Add A Photo
+Photo Library
+
+Navigate Before
+Auto Stories
+Add Photo Alternate
+Brush
+Imagesmode
+Nature
+
+Flash On
+Wb Sunny
+Camera
+Straighten
+Looks One
+Landscape
+
+Timelapse
+Slideshow
+Grid On
+Rotate Right
+Crop Square
+Adjust
+
+Style
+Crop Free
+Aspect Ratio
+Brightness 6
+Photo
+Nature People
+
+Filter Vintage
+Image Search
+Crop
+Blur On
+Center Focus Strong
+Contrast
+
+Compare
+Looks Two
+Rotate Left
+Colorize
+Flare
+Filter None
+
+Wb Incandescent
+Filter Drama
+Healing
+Looks 3
+Wb Twilight
+Brightness 5
+
+Invert Colors
+Animation
+Lens
+Opacity
+Incomplete Circle
+Broken Image
+
+Filter Center Focus
+Add To Photos
+Brightness 4
+Flash Off
+Flip
+Center Focus Weak
+
+Auto Awesome Motion
+Mic External On
+Flip Camera Android
+Grain
+Details
+No Photography
+
+Lens Blur
+Image Not Supported
+Web Stories
+Panorama
+Dehaze
+Gif Box
+
+Flaky
+Loupe
+Exposure Plus 1
+Settings Brightness
+Texture
+Auto Awesome Mosaic
+
+Looks 4
+Filter 1
+Timer Off
+Flip Camera Ios
+Panorama Fish Eye
+View Compact
+
+Brightness 1
+Filter
+Control Point Duplicate
+Photo Camera Front
+Brightness 7
+Photo Album
+
+Transform
+Linked Camera
+View Comfy
+Crop 16 9
+Looks
+Hide Image
+
+Looks 5
+Exposure
+Rotate 90 Degrees Ccw
+Filter Hdr
+Gif
+Brightness 3
+
+Hdr Strong
+Leak Add
+Crop 7 5
+Gradient
+Hdr Auto
+Vrpano
+
+Crop Portrait
+Camera Roll
+Blur Circular
+Motion Photos Auto
+Rotate 90 Degrees Cw
+Photo Size Select Small
+
+Brightness 2
+Shutter Speed
+Looks 6
+Flash Auto
+Camera Front
+Crop Landscape
+
+Filter 2
+Filter Tilt Shift
+Monochrome Photos
+Deblur
+Night Sight Auto
+Motion Photos Paused
+
+Crop 5 4
+Hdr Weak
+Filter 4
+Filter 3
+Crop Rotate
+Crop 3 2
+
+Tonality
+Switch Camera
+Photo Frame
+Exposure Zero
+Ev Shadow
+Fluorescent
+
+Macro Off
+Photo Size Select Large
+Filter Frames
+Party Mode
+Raw On
+Motion Blur
+
+Exposure Plus 2
+Photo Camera Back
+Blur Linear
+Exposure Neg 1
+Wb Iridescent
+Motion Photos Off
+
+Filter B And W
+Switch Video
+Panorama Horizontal
+Filter 5
+Blur Medium
+Invert Colors Off
+
+Filter 7
+Face Retouching Off
+Burst Mode
+Panorama Photosphere
+Hdr On
+Grid Off
+
+Filter 9 Plus
+Filter 8
+Blur Short
+Timer 10
+Filter 9
+Dirty Lens
+
+Wb Shade
+No Flash
+Filter 6
+Image Aspect Ratio
+Trail Length
+Exposure Neg 2
+
+Vignette
+Timer 3
+Leak Remove
+60fps Select
+Blur Off
+30fps Select
+
+Perm Camera Mic
+Camera Rear
+Mic External Off
+Trail Length Medium
+Panorama Vertical
+Trail Length Short
+
+Night Sight Auto Off
+Autofps Select
+Panorama Wide Angle
+Mp
+Hdr Off
+24mp
+
+Hdr On Select
+Hdr Enhanced Select
+22mp
+10mp
+12mp
+18mp
+
+Hdr Auto Select
+Hdr Plus
+Raw Off
+Wb Auto
+9mp
+13mp
+
+20mp
+5mp
+7mp
+15mp
+Hdr Off Select
+16mp
+
+Hevc
+19mp
+14mp
+23mp
+2mp
+8mp
+
+3mp
+6mp
+11mp
+21mp
+17mp
+4mp
+
+Gallery Thumbnail
+Masked Transitions
+Motion Photos On
+Photo Prints
+Settings Photo Camera
+Planner Banner Ad Pt
+
+Settings Panorama
+Unknown 2
+Vr180 Create2d
+Settings Video Camera
+Motion Mode
+Settings Night Sight
+
+50mp
+Settings Motion Mode
+Background Dot Large
+Settings Timelapse
+Background Grid Small
+Settings Cinematic Blur
+
+Macro Auto
+Settings B Roll
+High Density
+Contrast Rtl Off
+Low Density
+Settings Slow Motion
+
+Ev Shadow Add
+Ev Shadow Minus
+Shutter Speed Add
+Shutter Speed Minus
+Texture Add
+Texture Minus
+
+Shopping Cart
+Payments
+Shopping Bag
+Monitoring
+Credit Card
+Receipt Long
+
+Attach Money
+Storefront
+Sell
+Trending Up
+Database
+Account Balance
+
+Work
+Paid
+Account Balance Wallet
+Analytics
+Query Stats
+Store
+
+Savings
+Monetization On
+Calculate
+Qr Code Scanner
+Bar Chart
+Account Tree
+
+Add Shopping Cart
+Receipt
+Redeem
+Currency Exchange
+Trending Flat
+Shopping Basket
+
+Qr Code 2
+Domain
+Qr Code
+Precision Manufacturing
+Leaderboard
+Corporate Fare
+
+Timeline
+Insert Chart
+Currency Rupee
+Show Chart
+Wallet
+Euro
+
+Work History
+Meeting Room
+Credit Score
+Barcode Scanner
+Pie Chart
+Loyalty
+
+Copyright
+Conversion Path
+Barcode
+Track Changes
+Trending Down
+Price Check
+
+Euro Symbol
+Schema
+Add Business
+Add Card
+Card Membership
+Currency Bitcoin
+
+Price Change
+Production Quantity Limits
+Donut Large
+Tenancy
+Data Exploration
+Bubble Chart
+
+Donut Small
+Contactless
+Money
+Stacked Line Chart
+Stacked Bar Chart
+Toll
+
+Money Off
+Cases
+Currency Yen
+Currency Pound
+Area Chart
+Atr
+
+Remove Shopping Cart
+Room Preferences
+Add Chart
+Shop
+Domain Add
+Grouped Bar Chart
+
+Card Travel
+Legend Toggle
+Scatter Plot
+Credit Card Off
+Mediation
+Ssid Chart
+
+Candlestick Chart
+Waterfall Chart
+Currency Ruble
+Full Stacked Bar Chart
+Domain Disabled
+Strikethrough S
+
+Shop Two
+Next Week
+Atm
+Multiline Chart
+Currency Lira
+Currency Yuan
+
+No Meeting Room
+Currency Franc
+Troubleshoot
+Finance
+Data Table
+Bid Landscape
+
+Bar Chart 4 Bars
+Contactless Off
+Chart Data
+Universal Currency Alt
+Podium
+Order Approve
+
+Family History
+Conveyor Belt
+Send Money
+Flowsheet
+Forklift
+Qr Code 2 Add
+
+Front Loader
+Inactive Order
+Box
+Pallet
+Bid Landscape Disabled
+Barcode Reader
+
+Trolley
+Box Add
+Conversion Path Off
+Order Play
+Work Alert
+Work Update
+
+Box Edit
+
+Pin Drop
+Location On
+Map
+Home Pin
+Explore
+Restaurant
+
+Flag
+My Location
+Local Fire Department
+Person Pin Circle
+Local Mall
+Near Me
+
+Where To Vote
+Business Center
+East
+Restaurant Menu
+Handyman
+Factory
+
+Local Library
+Medical Services
+Home Work
+Layers
+Local Activity
+Share Location
+
+Emergency
+North East
+Add Location
+Fastfood
+Navigation
+Warehouse
+
+Person Pin
+Local Parking
+Home Repair Service
+Local Hospital
+South
+Local Police
+
+Zoom Out Map
+Location Searching
+Local Florist
+Location Away
+Crisis Alert
+West
+
+Local Gas Station
+Park
+Maps Ugc
+Cleaning Services
+Local Atm
+Package
+
+360
+Electrical Services
+North
+Flag Circle
+Add Location Alt
+Directions
+
+Fmd Bad
+Theater Comedy
+Local Drink
+Location Home
+Local Pizza
+Not Listed Location
+
+Local Post Office
+Wine Bar
+Beenhere
+Local Convenience Store
+Signpost
+Alt Route
+
+Tour
+Trip Origin
+Church
+Traffic
+Local Laundry Service
+Safety Check
+
+Ev Station
+Takeout Dining
+Moving
+Zoom In Map
+Soup Kitchen
+Pest Control
+
+Stadium
+Transfer Within A Station
+Location Off
+Connecting Airports
+Wrong Location
+Multiple Stop
+
+Edit Location
+Plumbing
+Mode Of Travel
+Minor Crash
+South East
+Add Road
+
+Local Pharmacy
+Fire Truck
+Castle
+Dry Cleaning
+Set Meal
+Baby Changing Station
+
+Edit Location Alt
+Layers Clear
+Mosque
+North West
+Local Car Wash
+Edit Attributes
+
+Run Circle
+Transit Enterexit
+Sos
+Satellite
+Edit Road
+South West
+
+Streetview
+Add Home
+Kebab Dining
+Airline Stops
+Local See
+Fire Hydrant
+
+Assist Walker
+Add Home Work
+Flight Class
+Remove Road
+No Meals
+Synagogue
+
+Fort
+Temple Buddhist
+Location Disabled
+Compass Calibration
+Temple Hindu
+Explore Off
+
+Pest Control Rodent
+Near Me Disabled
+Directions Alt
+Pergola
+Directions Off
+Directions Alt Off
+
+Pet Supplies
+Moved Location
+Move Location
+Moving Ministry
+Safety Check Off
+Move
+
+Description
+Content Copy
+Dashboard
+Edit Note
+Menu Book
+Grid View
+
+List
+Folder
+List Alt
+Inventory
+Folder Open
+Article
+
+Fact Check
+Attach File
+Format List Bulleted
+Assignment
+Task
+Checklist
+
+Cloud Upload
+Draft
+Summarize
+Feed
+Draw
+Cloud
+
+Newspaper
+View List
+File Copy
+Note Add
+Border Color
+Book
+
+History Edu
+Design Services
+Pending Actions
+Format Quote
+Post Add
+Request Quote
+
+Cloud Download
+Drag Handle
+Contact Page
+Table
+Space Dashboard
+Archive
+
+Content Paste
+Percent
+Attachment
+Assignment Ind
+Format List Numbered
+Assignment Turned In
+
+Tag
+Table Chart
+Sticky Note 2
+Dashboard Customize
+Text Fields
+Reorder
+
+Integration Instructions
+Format Bold
+Find In Page
+Text Snippet
+Note
+Document Scanner
+
+Checklist Rtl
+Note Alt
+Edit Document
+Cloud Sync
+Table Rows
+Perm Media
+
+Cloud Done
+Title
+Table View
+Content Cut
+Notes
+Cut
+
+Data Object
+Subject
+Functions
+Format Italic
+Content Paste Search
+Format Color Fill
+
+Folder Shared
+Plagiarism
+Horizontal Rule
+File Present
+Folder Copy
+Format Align Left
+
+Ballot
+Team Dashboard
+Cloud Off
+Format Paint
+Add Link
+View Column
+
+Read More
+Difference
+View Agenda
+Format Size
+Format Underlined
+Vertical Align Top
+
+Toc
+Height
+Vertical Align Bottom
+View Week
+Copy All
+Drive Folder Upload
+
+Assignment Late
+Format Color Text
+View Module
+Drive File Move
+Low Priority
+Assignment Return
+
+Format Align Center
+Folder Special
+Segment
+Calendar View Month
+Folder Zip
+Polyline
+
+Square
+Breaking News Alt 1
+Format Align Right
+Grading
+View Headline
+Linear Scale
+
+View Quilt
+Edit Off
+View Carousel
+Text Increase
+Request Page
+View Sidebar
+
+Pages
+Text Format
+Format Align Justify
+Calendar View Week
+Hexagon
+Numbers
+
+Docs Add On
+Folder Delete
+Format Shapes
+Forms Add On
+Imagesearch Roller
+Calendar View Day
+
+Video File
+Font Download
+Format List Numbered Rtl
+Join Inner
+Add To Drive
+Content Paste Go
+
+Restore Page
+Rectangle
+Rule Folder
+Vertical Split
+Format Color Reset
+Cloud Circle
+
+View Stream
+Format Indent Increase
+Spellcheck
+Assignment Returned
+Data Array
+Align Horizontal Left
+
+Text Decrease
+Pivot Table Chart
+Deselect
+Vertical Align Center
+Pentagon
+Merge Type
+
+Space Bar
+Format Strikethrough
+View Day
+Flip To Front
+Join Left
+Short Text
+
+Border All
+Shape Line
+Format Line Spacing
+Line Weight
+Horizontal Split
+Format Indent Decrease
+
+Align Horizontal Center
+Join Right
+Snippet Folder
+Subtitles Off
+Align Vertical Bottom
+Folder Off
+
+Align Horizontal Right
+Glyphs
+Format Clear
+Function
+Insert Page Break
+Vertical Distribute
+
+Content Paste Off
+Line Axis
+Horizontal Distribute
+Superscript
+Line Style
+Flip To Back
+
+Align Vertical Center
+Align Vertical Top
+Margin
+Clarify
+Wrap Text
+View Array
+
+Subscript
+Border Clear
+Border Style
+Amp Stories
+Border Outer
+Type Specimen
+
+Text Rotate Vertical
+Padding
+Counter 1
+Forms Apps Script
+Ink Pen
+Border Vertical
+
+Text Rotation None
+Ink Eraser
+Format Textdirection L To R
+Docs Apps Script
+Format Overline
+Border Horizontal
+
+Font Download Off
+Format Textdirection R To L
+Newsmode
+Text Rotation Angleup
+Border Bottom
+Text Rotation Down
+
+Border Inner
+Border Top
+Border Left
+Text Rotation Angledown
+News
+Assignment Add
+
+Finance Chip
+Text Rotate Up
+Border Right
+Ink Highlighter
+Format H1
+View Column 2
+
+Join
+Overview
+Full Coverage
+Format Underlined Squiggle
+Slide Library
+Colors
+
+Format H2
+Format Paragraph
+Counter 2
+Equal
+Format List Bulleted Add
+Format Image Left
+
+Lab Profile
+Breaking News
+Frame Inspect
+Variables
+Counter 3
+Format Image Right
+
+Ink Marker
+Format H3
+Csv
+Format H5
+Format H6
+Signature
+
+Process Chart
+Voting Chip
+Remove Selection
+Format H4
+Format Ink Highlighter
+Location Chip
+
+Export Notes
+Stylus Laser Pointer
+Shapes
+Sticky Note
+Add Notes
+Counter 4
+
+Frame Source
+Unknown Document
+Cell Merge
+Draw Abstract
+Format Text Overflow
+Reset Image
+
+Table Chart View
+Diagnosis
+Format Letter Spacing Standard
+Grid Guides
+Regular Expression
+Select
+
+Table Rows Narrow
+Business Chip
+List Alt Add
+Source Notes
+Text Ad
+Text Select Move Forward Character
+
+Custom Typography
+Folder Managed
+Ungroup
+Width
+Decimal Increase
+Lasso Select
+
+Contract
+Contract Edit
+Counter 5
+Insert Text
+Scan Delete
+Smb Share
+
+Line End Arrow Notch
+Match Case
+Counter 6
+Format Letter Spacing 2
+Line Start
+Thumbnail Bar
+
+Line End
+Stroke Full
+Tab Close
+Format Letter Spacing
+Line End Square
+Post
+
+Scan
+Draw Collage
+Flex Wrap
+Folder Supervised
+Format Letter Spacing Wide
+Format Letter Spacing Wider
+
+Highlighter Size 3
+Language Chinese Quick
+Line End Arrow
+Line Start Diamond
+Match Word
+Other Admission
+
+Text Select Start
+Counter 7
+Counter 8
+Language Spanish
+Line End Circle
+Line Start Circle
+
+Special Character
+Tab Move
+Align Justify Space Around
+Align Justify Space Between
+Align Space Between
+Counter 0
+
+Counter 9
+Format Text Clip
+Line Curve
+Line End Diamond
+Pen Size 5
+Person Book
+
+Tab Duplicate
+Tab Group
+Tab New Right
+Text Select Jump To Beginning
+Top Panel Close
+Top Panel Open
+
+Fit Width
+Flex Direction
+Frame Reload
+Heap Snapshot Multiple
+Heap Snapshot Thumbnail
+Ink Eraser Off
+
+Language French
+Language Gb English
+Language International
+Language Korean Latin
+Line Start Square
+Sheets Rtl
+
+Tab Close Right
+Text Select Move Forward Word
+Text Select Move Up
+Tsv
+Align Justify Space Even
+Attach File Add
+
+Heap Snapshot Large
+Highlighter Size 5
+Language Chinese Dayi
+Language Chinese Wubi
+Line Start Arrow
+Line Start Arrow Notch
+
+Pen Size 3
+Stroke Partial
+Tab Recent
+Text Select Move Down
+Align Flex Center
+Align Flex Start
+
+Align Justify Center
+Align Justify Flex End
+Align Justify Flex Start
+Align Self Stretch
+Align Space Around
+Align Space Even
+
+Article Shortcut
+Contract Delete
+Fit Page
+Format Text Wrap
+Highlighter Size 4
+Language Chinese Array
+
+Language Chinese Cangjie
+Language Chinese Pinyin
+Language Pinyin
+Language Us
+Language Us Colemak
+Language Us Dvorak
+
+Letter Switch
+Pen Size 2
+Pen Size 4
+Text Select End
+Text Select Jump To End
+Align Center
+
+Align End
+Align Flex End
+Align Items Stretch
+Align Justify Stretch
+Align Start
+Align Stretch
+
+Decimal Decrease
+Flex No Wrap
+Folder Data
+Highlighter Size 1
+Highlighter Size 2
+Pen Size 1
+
+Text Select Move Back Character
+Text Select Move Back Word
+
+Play Arrow
+Play Circle
+Mic
+Videocam
+Volume Up
+Pause
+
+Music Note
+Library Books
+Movie
+Skip Next
+Speed
+Replay
+
+Volume Off
+Pause Circle
+View In Ar
+Fiber Manual Record
+Skip Previous
+Stop Circle
+
+Stop
+Equalizer
+Subscriptions
+Video Library
+Fast Forward
+Playlist Add
+
+Video Call
+Repeat
+Volume Mute
+Shuffle
+Mic Off
+Hearing
+
+Library Music
+Playlist Add Check
+Podcasts
+Fast Rewind
+Sound Detection Dog Barking
+Queue Music
+
+Video Camera Front
+Subtitles
+Volume Down
+Play Pause
+Album
+Discover Tune
+
+Radio
+Av Timer
+Library Add Check
+Videocam Off
+Closed Caption
+Stream
+
+Forward 10
+Not Started
+Playlist Play
+Replay 10
+Fiber New
+Branding Watermark
+
+Text To Speech
+Recent Actors
+Playlist Remove
+Interpreter Mode
+Slow Motion Video
+Frame Person
+
+Playlist Add Check Circle
+Settings Voice
+Video Settings
+Featured Play List
+Sound Detection Loud Sound
+Audio File
+
+Lyrics
+Play Lesson
+Hd
+Repeat One
+Call To Action
+High Quality
+
+Add To Queue
+Music Off
+Video Camera Back
+Spatial Audio Off
+Shuffle On
+Playlist Add Circle
+
+Volume Down Alt
+Hearing Disabled
+Featured Video
+Replay 5
+Repeat On
+Queue Play Next
+
+Speech To Text
+Spatial Audio
+Art Track
+Explicit
+Airplay
+Forward 5
+
+Forward 30
+4k
+Music Video
+Replay 30
+Control Camera
+Spatial Tracking
+
+Closed Caption Disabled
+Digital Out Of Home
+Video Label
+Fiber Smart Record
+Play Disabled
+Repeat One On
+
+Broadcast On Personal
+Sd
+Missed Video Call
+Surround Sound
+Brand Awareness
+Fiber Pin
+
+10k
+Sound Detection Glass Break
+60fps
+Remove From Queue
+Broadcast On Home
+Fiber Dvr
+
+30fps
+4k Plus
+Video Stable
+8k
+1k
+Privacy
+
+8k Plus
+2k
+Instant Mix
+7k
+1k Plus
+9k
+
+9k Plus
+5k
+6k
+2k Plus
+5k Plus
+6k Plus
+
+3k
+7k Plus
+3k Plus
+Ar On You
+No Sound
+Cinematic Blur
+
+Video Search
+Hangout Video
+Media Link
+Genres
+Autoplay
+Mic Double
+
+Autopause
+Movie Edit
+Video Camera Front Off
+Forward Media
+Movie Info
+Hangout Video Off
+
+Resume
+Select To Speak
+Autostop
+2d
+Audio Description
+Voice Selection
+
+Forward Circle
+Frame Person Off
+View In Ar Off
+Sound Sampler
+Full Hd
+
+Local Shipping
+Directions Car
+Flight
+Directions Run
+Directions Walk
+Flight Takeoff
+
+Directions Bus
+Directions Bike
+Train
+Airport Shuttle
+Pedal Bike
+Directions Boat
+
+Two Wheeler
+Agriculture
+Local Taxi
+Sailing
+Electric Car
+Flight Land
+
+Hail
+No Crash
+Commute
+Motorcycle
+Car Crash
+Tram
+
+Departure Board
+Subway
+Electric Moped
+Turn Right
+Electric Scooter
+Fork Right
+
+Directions Subway
+Tire Repair
+Electric Bike
+Rv Hookup
+Bus Alert
+Turn Left
+
+Transportation
+Airlines
+Taxi Alert
+U Turn Left
+Directions Railway
+Electric Rickshaw
+
+Turn Slight Right
+U Turn Right
+Fork Left
+Railway Alert
+Bike Scooter
+Turn Sharp Right
+
+Turn Slight Left
+No Transfer
+Snowmobile
+Turn Sharp Left
+Flightsmode
+Swap Driving Apps Wheel
+
+Ambulance
+
+School
+Campaign
+Construction
+Engineering
+Volunteer Activism
+Science
+
+Sports Esports
+Confirmation Number
+Real Estate Agent
+Cake
+Self Improvement
+Sports Soccer
+
+Air
+Biotech
+Water
+Hiking
+Architecture
+Sports Score
+
+Personal Injury
+Sports Basketball
+Waves
+Theaters
+Sports Tennis
+Switch Account
+
+Nights Stay
+Sports Gymnastics
+How To Vote
+Backpack
+Sports Motorsports
+Surfing
+
+Sports Kabaddi
+Piano
+Sports
+Toys
+Sports Volleyball
+Sports Baseball
+
+Sports Martial Arts
+Camping
+Downhill Skiing
+Swords
+Scoreboard
+Kayaking
+
+Phishing
+Sports Handball
+Sports Football
+Skateboarding
+Sports Golf
+Sports Cricket
+
+Toys Fan
+Nordic Walking
+Kitesurfing
+Roller Skating
+Rowing
+Trophy
+
+Scuba Diving
+Storm
+Sports Mma
+Paragliding
+Snowboarding
+Sports Hockey
+
+Ice Skating
+Snowshoeing
+Sports Rugby
+Sledding
+Piano Off
+No Backpack
+
+Family Link
+Rewarded Ads
+Ifl
+Cake Add
+Health Metrics
+Mindfulness
+
+Steps
+Sprint
+Exercise
+Stress Management
+Menstrual Health
+Readiness Score
+
+Ecg Heart
+Relax
+Azm
+Laps
+Person Play
+Pace
+
+Distance
+Floor
+Person Celebrate
+Avg Time
+Avg Pace
+Fertile
+
+Onsen
+Podiatry
+Spo2
+Water Full
+Play Shapes
+Bath Outdoor
+
+Eda
+Bia
+Elevation
+Water Medium
+Interactive Space
+Hr Resting
+
+Glass Cup
+Water Loss
+Monitor Weight Loss
+Sauna
+Sleep Score
+Bath Private
+
+Monitor Weight Gain
+Bath Public Large
+Check In Out
+Physical Therapy
+
+Phone Iphone
+Save
+Smartphone
+Print
+Keyboard Arrow Down
+Computer
+
+Devices
+Desktop Windows
+Smart Display
+Dns
+Keyboard Backspace
+Headphones
+
+Smart Toy
+Phone Android
+Keyboard Arrow Right
+Memory
+Keyboard
+Live Tv
+
+Laptop Mac
+Headset Mic
+Keyboard Arrow Up
+Tv
+Device Thermostat
+Mouse
+
+Balance
+Route
+Point Of Sale
+Keyboard Arrow Left
+Laptop Chromebook
+Keyboard Return
+
+Watch
+Power
+Laptop Windows
+Router
+Developer Board
+Display Settings
+
+Scale
+Book Online
+Developer Mode
+Cast
+Fax
+Cast For Education
+
+Videogame Asset
+Device Hub
+Straight
+Screen Search Desktop
+Desktop Mac
+Mobile Friendly
+
+Settings Ethernet
+Settings Input Antenna
+Monitor
+Important Devices
+Tablet Mac
+Devices Other
+
+Send To Mobile
+System Update
+Settings Remote
+Monitor Weight
+Screen Rotation
+Screen Share
+
+Keyboard Alt
+Settings Input Component
+Speaker
+Merge
+Sim Card
+Keyboard Tab
+
+Vibration
+Tablet
+Power Off
+Connected Tv
+Screenshot Monitor
+Remember Me
+
+Browser Updated
+Security Update Good
+Sd Card
+Cast Connected
+Device Unknown
+Tablet Android
+
+Charging Station
+Phonelink Setup
+Punch Clock
+Scanner
+Screenshot
+Settings Input Hdmi
+
+Stay Current Portrait
+Tap And Play
+Keyboard Hide
+Print Disabled
+Security Update Warning
+Disc Full
+
+Keyboard Capslock
+App Blocking
+Speaker Group
+Mobile Screen Share
+Aod
+Sd Card Alert
+
+Tty
+Add To Home Screen
+Lift To Talk
+Earbuds
+Perm Device Information
+Stop Screen Share
+
+Mobile Off
+Headset Off
+Desktop Access Disabled
+Reset Tv
+Offline Share
+Adf Scanner
+
+Headphones Battery
+Screen Lock Portrait
+Roundabout Right
+Dock
+Settop Component
+Settings Input Svideo
+
+Watch Off
+Smart Screen
+Stay Current Landscape
+Chromecast Device
+Settings Cell
+Earbuds Battery
+
+Home Max
+Power Input
+No Sim
+Ramp Right
+Screen Lock Landscape
+Roundabout Left
+
+Stay Primary Portrait
+Stay Primary Landscape
+Developer Board Off
+Tv Off
+Home Mini
+Phonelink Off
+
+Ramp Left
+Screen Lock Rotation
+Videogame Asset Off
+Aod Tablet
+Open In Phone
+Gamepad
+
+Robot
+Rear Camera
+Jamboard Kiosk
+Mimo
+App Promo
+Devices Wearables
+
+Tv Options Edit Channels
+Developer Mode Tv
+Mimo Disconnect
+Ambient Screen
+Touchpad Mouse
+Camera Video
+
+Tv Signin
+Aod Watch
+Robot 2
+Joystick
+Night Sight Max
+Hard Drive
+
+Ecg
+Memory Alt
+Tv Guide
+Devices Off
+Open Jam
+Stream Apps
+
+Screenshot Tablet
+Cast Pause
+Cast Warning
+Deskphone
+Keyboard Tab Rtl
+Pacemaker
+
+Tv Remote
+Watch Wake
+Hard Drive 2
+Lda
+Print Lock
+Watch Button Press
+
+Audio Video Receiver
+Print Add
+Print Connect
+Print Error
+Ventilator
+
+Dark Mode
+Light Mode
+Wifi
+Signal Cellular Alt
+Password
+Widgets
+
+Pin
+Storage
+Android
+Rss Feed
+Wifi Off
+Bluetooth
+
+Battery Charging Full
+Dvr
+Thermostat
+Graphic Eq
+Nightlight
+Battery 5 Bar
+
+Signal Wifi 4 Bar
+Gpp Maybe
+Cable
+Gpp Bad
+Data Usage
+Battery 4 Bar
+
+Signal Cellular 4 Bar
+Radar
+Airplanemode Active
+Battery 0 Bar
+Cameraswitch
+Wallpaper
+
+Signal Disconnected
+Flashlight On
+Network Check
+Battery 6 Bar
+Charger
+Wifi Tethering
+
+Sim Card Download
+Usb
+Quick Phrases
+Splitscreen
+Battery 3 Bar
+Battery 1 Bar
+
+Adb
+Network Wifi 3 Bar
+Battery Low
+Battery Alert
+Bluetooth Searching
+Network Wifi
+
+Bluetooth Connected
+Wifi Find
+5g
+Battery 2 Bar
+Brightness High
+Network Cell
+
+Pattern
+Nfc
+Data Saver On
+Bluetooth Disabled
+Signal Wifi Statusbar Not Connected
+Signal Cellular 3 Bar
+
+Signal Wifi Bad
+Network Wifi 2 Bar
+Noise Control Off
+Network Wifi 1 Bar
+Brightness Medium
+Signal Wifi Off
+
+Mode Standby
+Battery Very Low
+Brightness Low
+Mobiledata Off
+Signal Wifi 0 Bar
+Battery Charging 20
+
+Battery Charging 80
+Grid 4x4
+Battery Saver
+Battery Charging 90
+Flashlight Off
+Signal Wifi Statusbar Null
+
+Battery Charging 50
+Settings System Daydream
+Battery Unknown
+Signal Cellular 2 Bar
+Screen Rotation Alt
+Wifi Calling 3
+
+Signal Cellular 1 Bar
+Badge Critical Battery
+4g Mobiledata
+Wifi Lock
+Noise Aware
+Do Not Disturb On Total Silence
+
+Battery Charging 60
+Signal Cellular Connected No Internet 0 Bar
+Nearby Error
+Signal Cellular 0 Bar
+Battery Charging 30
+Network Ping
+
+Signal Cellular Connected No Internet 4 Bar
+Wifi Tethering Error
+Brightness Auto
+Wifi Calling 1
+Edgesensor High
+Wifi 2 Bar
+
+Airplanemode Inactive
+Grid 3x3
+Signal Cellular Nodata
+1x Mobiledata
+Lte Mobiledata
+Perm Data Setting
+
+Signal Cellular Alt 2 Bar
+Devices Fold
+Bluetooth Drive
+Perm Scan Wifi
+Network Locked
+Media Bluetooth On
+
+Wifi Calling 2
+4g Plus Mobiledata
+Signal Cellular Off
+Timer 10 Select
+Wifi Tethering Off
+Signal Cellular Alt 1 Bar
+
+Edgesensor Low
+3g Mobiledata
+Usb Off
+Wifi 1 Bar
+Apk Install
+Signal Cellular Null
+
+Lte Plus Mobiledata
+Grid Goldenratio
+G Mobiledata
+Portable Wifi Off
+Noise Control On
+Media Bluetooth Off
+
+Timer 3 Select
+E Mobiledata
+Apk Document
+Nearby Off
+H Mobiledata
+R Mobiledata
+
+H Plus Mobiledata
+Dual Screen
+Dock To Left
+Nearby
+Stylus
+Stylus Note
+
+Dock To Right
+Screenshot Region
+Overview Key
+Keyboard Keys
+Battery Status Good
+Brightness Alert
+
+Brightness Empty
+Splitscreen Left
+Splitscreen Right
+Dock To Bottom
+Keyboard Off
+Screen Record
+
+Screenshot Keyboard
+Keyboard External Input
+Magnify Fullscreen
+Wallpaper Slideshow
+Display External Input
+1x Mobiledata Badge
+
+Battery Change
+Magnify Docked
+Screenshot Frame
+Backlight Low
+Battery Plus
+Keyboard Full
+
+Keyboard Onscreen
+Wifi Notification
+4g Mobiledata Badge
+5g Mobiledata Badge
+Battery Error
+Keyboard Capslock Badge
+
+Keyboard Previous Language
+Lte Mobiledata Badge
+Lte Plus Mobiledata Badge
+Screen Rotation Up
+Wifi Home
+3g Mobiledata Badge
+
+Backlight High
+Battery Share
+E Mobiledata Badge
+Ev Mobiledata Badge
+G Mobiledata Badge
+Grid 3x3 Off
+
+H Mobiledata Badge
+H Plus Mobiledata Badge
+Network Wifi 1 Bar Locked
+Network Wifi 2 Bar Locked
+Network Wifi 3 Bar Locked
+Signal Cellular Pause
+
+Splitscreen Bottom
+Splitscreen Top
+
+Badge
+Verified User
+Admin Panel Settings
+Report
+Security
+Vpn Key
+
+Shield
+Policy
+Exclamation
+Privacy Tip
+Assured Workload
+Vpn Lock
+
+Disabled Visible
+E911 Emergency
+Enhanced Encryption
+Private Connectivity
+Vpn Key Off
+Add Moderator
+
+No Encryption
+Sync Lock
+Wifi Password
+Key Visualizer
+Remove Moderator
+Encrypted
+
+Report Off
+Shield Lock
+Shield Person
+Vpn Key Alert
+Shield Locked
+
+Apartment
+Location City
+Fitness Center
+Lunch Dining
+Spa
+Cottage
+
+Local Cafe
+Hotel
+Family Restroom
+Beach Access
+Local Bar
+Pool
+
+Other Houses
+Luggage
+Liquor
+Airplane Ticket
+Casino
+Sports Bar
+
+Bakery Dining
+Ramen Dining
+Nightlife
+Local Dining
+Holiday Village
+Icecream
+
+Escalator Warning
+Dinner Dining
+Museum
+Food Bank
+Night Shelter
+Festival
+
+Attractions
+Golf Course
+Stairs
+Villa
+Smoke Free
+Smoking Rooms
+
+Car Rental
+Airline Seat Recline Normal
+Elevator
+Gite
+Child Friendly
+Airline Seat Recline Extra
+
+Breakfast Dining
+Carpenter
+Car Repair
+Cabin
+Brunch Dining
+No Food
+
+Do Not Touch
+Houseboat
+Rice Bowl
+Tapas
+Wheelchair Pickup
+Bento
+
+No Drinks
+Do Not Step
+Bungalow
+Airline Seat Flat
+Airline Seat Individual Suite
+Escalator
+
+Chalet
+No Luggage
+Airline Seat Legroom Extra
+Airline Seat Flat Angled
+Airline Seat Legroom Normal
+Airline Seat Legroom Reduced
+
+Travel
+No Stroller
+Your Trips
+
+House
+Bed
+Ac Unit
+Chair
+Coffee
+Electric Bolt
+
+Sensors
+Child Care
+Back Hand
+Checkroom
+Emergency Home
+Grass
+
+Shower
+Mode Fan
+Mop
+Kitchen
+Room Service
+Thermometer
+
+Styler
+Yard
+Bathtub
+King Bed
+Roofing
+Energy Savings Leaf
+
+Window
+Valve
+Cooking
+Garage Home
+Door Front
+Mode Heat
+
+Light
+Foundation
+Outdoor Grill
+Garage
+Dining
+Table Restaurant
+
+Sensor Occupied
+Deck
+Weekend
+Coffee Maker
+Humidity High
+Flatware
+
+Highlight
+Fireplace
+Humidity Low
+Mode Night
+Electric Meter
+Tv Gen
+
+Humidity Mid
+Bedroom Parent
+Chair Alt
+Blender
+Scene
+Microwave
+
+Oven Gen
+Single Bed
+Heat Pump
+Bedroom Baby
+Bathroom
+In Home Mode
+
+Hot Tub
+Hardware
+Mode Off On
+Sprinkler
+Table Bar
+Gas Meter
+
+Crib
+Soap
+Countertops
+Living
+Mode Cool
+Home Iot Device
+
+Propane Tank
+Fire Extinguisher
+Outlet
+Remote Gen
+Matter
+Gate
+
+Sensor Door
+Event Seat
+Airware
+Faucet
+Dishwasher Gen
+Energy Program Saving
+
+Air Freshener
+Balcony
+Water Damage
+Wash
+Camera Indoor
+Bedroom Child
+
+House Siding
+Microwave Gen
+Switch
+Detector Smoke
+Door Sliding
+Iron
+
+Desk
+Energy Program Time Used
+Umbrella
+Water Heater
+Fence
+Dresser
+
+Door Back
+Doorbell
+Mode Fan Off
+Hvac
+Kettle
+Camera Outdoor
+
+Air Purifier Gen
+Emergency Heat
+Emergency Share
+Stroller
+Curtains
+Multicooker
+
+Shield Moon
+Sensors Off
+Mode Heat Cool
+Thermostat Auto
+Emergency Recording
+Smart Outlet
+
+Controller Gen
+Blinds
+Roller Shades
+Dry
+Blinds Closed
+Roller Shades Closed
+
+Propane
+Sensor Window
+Thermostat Carbon
+Range Hood
+Doorbell 3p
+Blanket
+
+Tv With Assistant
+Vertical Shades Closed
+Vertical Shades
+Curtains Closed
+Mode Heat Off
+Mode Cool Off
+
+Tamper Detection Off
+Shelves
+Thermometer Gain
+Wall Art
+Hallway
+Thermometer Loss
+
+Emergency Share Off
+Thermometer Add
+Thermometer Minus
+
+Stadia Controller
+Door Open
+Nest Eco Leaf
+Device Reset
+Nest Remote Comfort Sensor
+Nest Clock Farsight Analog
+
+Laundry
+Battery Horiz 075
+Shield With Heart
+Temp Preferences Eco
+Familiar Face And Zone
+Tools Power Drill
+
+Airwave
+Productivity
+Battery Horiz 050
+Nest Heat Link Gen 3
+Nest Display
+Weather Snowy
+
+Activity Zone
+Ev Charger
+Nest Remote
+Cleaning Bucket
+Settings Alert
+Nest Cam Indoor
+
+Arrows More Up
+Home Storage
+Nest Heat Link E
+Nest Multi Room
+Nest Secure Alarm
+Battery Horiz 000
+
+Light Group
+Google Wifi
+Nest Cam Outdoor
+Detection And Zone
+Nest Thermostat Gen 3
+Mfg Nest Yale Lock
+
+Tools Pliers Wire Stripper
+Detector Alarm
+Tools Ladder
+Nest Cam Iq Outdoor
+Early On
+Floor Lamp
+
+Nest Clock Farsight Digital
+Nest Cam Iq
+Home Speaker
+Nest Mini
+Nest Hello Doorbell
+Home Max Dots
+
+Nest Audio
+Nest Wifi Router
+House With Shield
+Zone Person Urgent
+Motion Sensor Active
+Nest Display Max
+
+Cool To Dry
+Shield With House
+Nest Farsight Weather
+Chromecast 2
+Battery Profile
+Window Closed
+
+Heat Pump Balance
+Arming Countdown
+Nest Found Savings
+Self Care
+Detector Status
+Tools Level
+
+Window Open
+Nest Thermostat Zirconium Eu
+Arrows More Down
+Nest True Radiant
+Nest Cam Wired Stand
+Zone Person Alert
+
+Nest Detect
+Detector
+Climate Mini Split
+Door Sensor
+Nest Wifi Point
+Nest Doorbell Visitor
+
+Nest Tag
+Quiet Time
+Nest Cam Floodlight
+Tools Installation Kit
+Nest Connect
+Nest Thermostat Sensor Eu
+
+Nest Sunblock
+Nest Thermostat Sensor
+Tools Phillips
+Nest Wifi Gale
+Nest Thermostat E Eu
+Doorbell Chime
+
+Detector Co
+Detector Battery
+Tools Flat Head
+Nest Wake On Approach
+Nest Wake On Press
+Table Lamp
+
+Motion Sensor Urgent
+Motion Sensor Alert
+Window Sensor
+Tamper Detection On
+Nest Cam Magnet Mount
+Zone Person Idle
+
+Quiet Time Active
+Nest Cam Stand
+Wall Lamp
+Detector Offline
+Nest Cam Wall Mount
+Motion Sensor Idle
+
+Nest Thermostat
+Water Pump
+Assistant On Hub
+Nest Protect
+Google Tv Remote
+
+Feedback
+
+Flutter
+
+`;
+
+
+
+var ICONS_NOT_SYMBOLS = (
+	[...top.document.querySelectorAll("link")].at(-1).href.includes("family=Material+Icons")
+);
+
+var sanitized = v => {
+	if(ICONS_NOT_SYMBOLS) {
+
+		// fine inside Material+Symbols+Outlined ... but MISSING from Material+Icons
+		if(MISSING_FROM_ICONS.includes(v)) {
+			return "```";	// future MIGHT see if there are just different short_names maybe?
+		};
+	};
+
+	return v.toLowerCase().replace(/[ ]/g, "_");
+};
+
+var rotation = () => ROTATE_DISABLED ? "" : (
+		'class="rotating"' + (
+		Math.random() < 0.5
+		? ""
+		: ' style="--rot-dir: -1"'
+	)
+);
+
+ICONS = ICONS.split("\n").filter(Boolean);
+
+[document.getElementById("container")].forEach(el => {
+	var html = [];
+
+	ICONS.forEach( (icon, i) => html.push(
+		i && !( i % 6 ) ? `\n<br />` : ``,
+		`<span title="${icon}" ${rotation()}>${sanitized(icon)}</span>`
+	) );
+
+	el.innerHTML = html.join("\n");
+});
+
+</script>
+
+</body>
+
+</html>
